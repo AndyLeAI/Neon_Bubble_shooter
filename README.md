@@ -3,7 +3,7 @@
 ## English
 
 ### Overview
-Bobble Pop — Neon Orbit Edition is a rebuilt Bubble Shooter game made with pure HTML5 Canvas. It runs independently and does not require LittleJS or any external template folder.
+Bobble Pop — Neon Orbit Edition is a rebuilt Bubble Shooter game made with pure HTML5 Canvas. It runs independently  any external template folder.
 
 ### How to Run
 1. Open the `BobblePop_Neon` folder.
@@ -82,7 +82,7 @@ BobblePop_Neon/
 ## Tiếng Việt
 
 ### Giới thiệu
-Bobble Pop — Neon Orbit Edition là game Bubble Shooter được viết lại bằng HTML5 Canvas thuần. Game chạy độc lập, không cần LittleJS hay thư mục template bên ngoài.
+Bobble Pop — Neon Orbit Edition là game Bubble Shooter được viết lại bằng HTML5 Canvas thuần. Game chạy độc lập, không cần thư mục template bên ngoài.
 
 ### Cách chạy
 1. Mở thư mục `BobblePop_Neon`.
