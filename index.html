@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070a24" />
+  <title>Bobble Pop — Neon Orbit Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell" aria-label="Bobble Pop Neon Orbit">
+    <section class="game-card">
+      <header class="hud">
+        <div class="stat-card">
+          <span class="stat-label">SCORE</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+        <div class="center-status">
+          <div class="danger-label"><span>ORBIT DESCENT</span><b id="rowTimer">20</b></div>
+          <div class="danger-track"><i id="dangerFill"></i></div>
+        </div>
+        <div class="stat-card align-right">
+          <span class="stat-label">BEST</span>
+          <strong id="bestValue">0</strong>
+        </div>
+      </header>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="900" height="1200" aria-label="Bobble Pop play area"></canvas>
+        <div id="comboBadge" class="combo-badge" aria-live="polite">COMBO ×2</div>
+        <div id="powerStatus" class="power-status hidden" aria-live="polite">⏱ TIME FREEZE 15s</div>
+
+        <div id="loadingOverlay" class="overlay loading-overlay">
+          <div class="loader-orbit"><i></i><i></i><i></i></div>
+          <p>Loading the galaxy...</p>
+        </div>
+
+        <div id="startOverlay" class="overlay hidden">
+          <div class="menu-panel hero-panel">
+            <img class="game-logo" src="assets/images/logo.png" alt="Bobble Pop Neon Orbit Edition" />
+            <p class="lead">Shoot bubbles, match 3 of the same color, and create brilliant combo chains.</p>
+            <button id="playButton" class="primary-button">PLAY NOW</button>
+            <div class="mini-guide">
+              <span>🖱️ Drag to aim</span>
+              <span>✨ Tap to shoot</span>
+              <span>⌨️ A/D + Space</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="pauseOverlay" class="overlay hidden">
+          <div class="menu-panel compact-panel">
+            <h2>PAUSED</h2>
+            <p>Orbit is being held steady.</p>
+            <button id="resumeButton" class="primary-button">RESUME</button>
+            <button id="restartFromPause" class="secondary-button">RESTART</button>
+          </div>
+        </div>
+
+        <div id="gameOverOverlay" class="overlay hidden">
+          <div class="menu-panel compact-panel">
+            <span id="resultKicker" class="result-kicker">MISSION ENDED</span>
+            <h2 id="resultTitle">GAME OVER</h2>
+            <p id="resultMessage">The bubbles crossed the danger line.</p>
+            <div class="result-grid">
+              <div><span>SCORE</span><b id="finalScore">0</b></div>
+              <div><span>BEST COMBO</span><b id="finalCombo">×1</b></div>
+            </div>
+            <button id="playAgainButton" class="primary-button">RESTART</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="control-bar">
+        <button id="pauseButton" class="icon-button" aria-label="Pause" title="Pause (P)">Ⅱ</button>
+        <button id="swapButton" class="swap-button" title="Swap current bubble with the next bubble (S)">
+          <span>⇄</span><b>SWAP</b>
+        </button>
+        <button id="muteButton" class="icon-button" aria-label="Mute audio" title="Toggle audio (M)">♫</button>
+      </footer>
+    </section>
+
+    <aside class="tips-panel">
+      <h3>NEON TIPS</h3>
+      <p>Pop more bubbles in one shot to build a higher combo score.</p>
+      <p>Clusters no longer connected to the ceiling will fall for bonus points.</p>
+      <div class="gift-guide">
+        <div><img src="assets/images/powerups/bomb.png" alt="Bomb"><span><b>Bomb</b>Explodes the surrounding bubbles.</span></div>
+        <div><img src="assets/images/powerups/fire.png" alt="Fire Starter"><span><b>Fire Starter</b>Burns one row and drops the bubbles below.</span></div>
+        <div><img src="assets/images/powerups/clock.png" alt="Clock"><span><b>Clock</b>Stops the descending orbit for 15 seconds.</span></div>
+      </div>
+      <div class="key-row"><kbd>P</kbd><span>Pause</span></div>
+      <div class="key-row"><kbd>R</kbd><span>Restart</span></div>
+      <div class="key-row"><kbd>M</kbd><span>Audio</span></div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
